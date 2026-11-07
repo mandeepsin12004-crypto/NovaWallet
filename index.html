@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="NovaWallet — a simple, modern crypto wallet app concept.">
+  <title>NovaWallet | Your crypto, in your control</title>
+  <style>
+    :root{--bg:#080d1b;--text:#f5f7ff;--muted:#a2aec6;--purple:#8d7cff;--mint:#4ce0c1;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 8%,#392d7048,transparent 28rem),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+    header{padding:20px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:1.25rem;font-weight:850;display:flex;align-items:center;gap:10px}.brand-mark{height:38px;width:38px;display:grid;place-items:center;border-radius:13px;color:#08101b;background:linear-gradient(135deg,var(--mint),#a18bff);font-weight:950}
+    .links{display:flex;gap:28px;color:var(--muted);font-size:.94rem}.links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:13px;background:linear-gradient(110deg,var(--purple),#648fff);color:white;font-weight:800;border:0;cursor:pointer;box-shadow:0 10px 28px #786aff35;transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.btn.ghost{background:#ffffff0b;border:1px solid var(--line);box-shadow:none}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;padding:76px 0 90px}.eyebrow{color:#bcb3ff;text-transform:uppercase;letter-spacing:1.5px;font-size:.8rem;font-weight:850}.eyebrow:before{content:"";display:inline-block;width:7px;height:7px;background:var(--mint);border-radius:50%;margin:0 9px 1px 0;box-shadow:0 0 12px var(--mint)}
+    h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.03;letter-spacing:-3px;margin:18px 0}.gradient{background:linear-gradient(95deg,#b3a5ff,var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:1.1rem;max-width:540px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:12px}.fine{color:#8290ad;font-size:.8rem;margin-top:15px}
+    .mockup-area{min-height:430px;display:grid;place-items:center;position:relative}.orb{position:absolute;width:300px;height:300px;border-radius:50%;background:#7969ff;filter:blur(100px);opacity:.23}
+    .phone{position:relative;width:300px;padding:12px;border-radius:34px;background:linear-gradient(145deg,#33415e,#10182a 55%,#3a4560);border:1px solid #ffffff30;box-shadow:0 35px 90px #0009;transform:rotate(4deg)}
+    .screen{border-radius:24px;background:linear-gradient(160deg,#14213a,#0b1221);padding:21px 18px;min-height:400px}.screen-top{display:flex;justify-content:space-between;color:#aab8d2;font-size:.75rem}
+    .balance-label{margin-top:30px;color:#a2b0cb;font-size:.8rem}.balance{font-size:2.2rem;font-weight:850;letter-spacing:-1.5px}.gain{font-size:.78rem;color:var(--mint)}
+    .chart{height:90px;margin:17px 0}.chart svg{height:100%;width:100%;overflow:visible}
+    .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.quick div{padding:9px 3px;text-align:center;border:1px solid var(--line);background:#ffffff0a;border-radius:11px;font-size:.7rem;color:#dce4f5}.quick b{display:block;font-size:1.05rem;color:white}
+    .asset-title{font-weight:800;font-size:.82rem;margin:18px 0 8px}.asset{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:.75rem}.coin{display:flex;align-items:center;gap:8px}.coin-icon{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#f4a623;color:#241600;font-weight:900}.coin-icon.eth{background:#929eff}.coin small{display:block;color:#8f9db8}.asset strong{text-align:right}
+    section{padding:70px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 35px}.section-head h2,.download h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-1.5px;margin:10px 0}.section-head p,.feature p,.download p{color:var(--muted)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.feature{padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#17233b,#0e1729)}.feature-icon{height:44px;width:44px;border-radius:14px;display:grid;place-items:center;background:#8d7cff22;color:#bdb3ff;font-size:1.3rem}.feature h3{margin:16px 0 6px}.feature p{font-size:.92rem;margin:0}
+    .download{padding:60px 25px;text-align:center;border:1px solid #aa9cff40;border-radius:26px;background:radial-gradient(circle at 50% 0,#8d7cff30,transparent 65%),#111b30}.download p{max-width:570px;margin:0 auto 24px}.download small{display:block;color:#8997b2;margin-top:13px}
+    footer{padding:30px 0;color:#8997b2;font-size:.82rem}.foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:15px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:15px;padding:55px 0}.hero-copy{text-align:center}.lead{margin-left:auto;margin-right:auto}.actions{justify-content:center}.mockup-area{min-height:420px}.features{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.wrap{width:calc(100% - 30px)}.links{display:none}.nav .btn{padding:10px 13px;font-size:.82rem}h1{letter-spacing:-2px}.hero{padding-top:42px}.mockup-area{min-height:390px}.phone{width:270px}.screen{min-height:380px}.features{grid-template-columns:1fr}section{padding:52px 0}.download{padding:43px 18px}.foot{flex-direction:column}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="brand-mark">N</span> NovaWallet</a>
+    <nav class="links" aria-label="Main navigation"><a href="#features">Features</a><a href="#security">Security</a><a href="#download">Download</a></nav>
+    <a class="btn" href="#download">Get the app ↗</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <div class="eyebrow">A smarter crypto experience</div>
+      <h1>Your crypto.<br><span class="gradient">Your control.</span></h1>
+      <p class="lead">A clean, simple place to explore your digital assets. Keep your crypto journey organised with the NovaWallet app.</p>
+      <div class="actions">
+        <a class="btn" href="#download">↓ Download application</a>
+        <a class="btn ghost" href="#features">Explore features</a>
+      </div>
+      <p class="fine">Designed for a smooth experience on mobile and desktop.</p>
+    </div>
+
+    <div class="mockup-area" aria-label="NovaWallet app preview">
+      <div class="orb"></div>
+      <div class="phone"><div class="screen">
+        <div class="screen-top"><span>9:41</span><span>●●● ▰</span></div>
+        <div class="balance-label">Total portfolio value</div><div class="balance">$24,680.50</div><div class="gain">↗ +5.28% this week</div>
+        <div class="chart"><svg viewBox="0 0 260 90" role="img" aria-label="Decorative upward portfolio chart">
+          <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8d7cff" stop-opacity=".4"/><stop offset="1" stop-color="#8d7cff" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 72 C20 65 22 75 42 56 S70 64 91 43 S119 52 139 31 S164 48 183 25 S215 38 232 12 L260 5 L260 90 L0 90Z" fill="url(#fill)"/>
+          <path d="M0 72 C20 65 22 75 42 56 S70 64 91 43 S119 52 139 31 S164 48 183 25 S215 38 232 12 L260 5" fill="none" stroke="#9b8cff" stroke-width="3" stroke-linecap="round"/>
+        </svg></div>
+        <div class="quick"><div><b>↗</b>Send</div><div><b>＋</b>Receive</div><div><b>⇄</b>Swap</div></div>
+        <div class="asset-title">My assets</div>
+        <div class="asset"><div class="coin"><span class="coin-icon">₿</span><span>Bitcoin<small>BTC</small></span></div><strong>$16,420<small class="gain">+2.4%</small></strong></div>
+        <div class="asset"><div class="coin"><span class="coin-icon eth">◆</span><span>Ethereum<small>ETH</small></span></div><strong>$8,260<small class="gain">+1.8%</small></strong></div>
+      </div></div>
+    </div>
+  </div>
+
+  <section id="features"><div class="wrap">
+    <div class="section-head"><div class="eyebrow">Everything in one place</div><h2>Made for your crypto journey</h2><p>Simple tools and a clear interface help make your digital-asset experience easier to navigate.</p></div>
+    <div class="features">
+      <article class="feature"><div class="feature-icon">◈</div><h3>Portfolio overview</h3><p>See a sample snapshot of your digital assets in one organised dashboard.</p></article>
+      <article class="feature"><div class="feature-icon">⇄</div><h3>Easy transfers</h3><p>A straightforward interface concept for sending, receiving and managing crypto.</p></article>
+      <article class="feature" id="security"><div class="feature-icon">⌑</div><h3>Security-minded design</h3><p>Designed with clear account actions and a focus on helping users stay aware.</p></article>
+    </div>
+  </div></section>
+
+
+  <section id="download"><div class="wrap">
+    <div class="download">
+      <div class="eyebrow">Take NovaWallet with you</div><h2>Ready to get started?</h2>
+      <p>Download the NovaWallet application and manage your crypto experience wherever you go.</p>
+      <?php if ($downloadUrl !== "YOUR_APP_DOWNLOAD_URL" && filter_var($downloadUrl, FILTER_VALIDATE_URL)): ?>
+        <a class="btn" href="<?php echo htmlspecialchars($downloadUrl, ENT_QUOTES, 'UTF-8'); ?>" download>↓ Download NovaWallet</a>
+        <small>Your application download is ready.</small>
+      <?php else: ?>
+        <a class="btn" href="#download" aria-describedby="downloadNote">↓ Download NovaWallet</a>
+        <small id="downloadNote">Add your real APK or installer URL to the $downloadUrl variable at the top of this file.</small>
+      <?php endif; ?>
+    </div>
+  </div></section>
+</main>
+<footer><div class="wrap foot"><span>© <?php echo htmlspecialchars($year, ENT_QUOTES, 'UTF-8'); ?> NovaWallet. All rights reserved.</span><span>NovaWallet is a demo design, not a live crypto wallet or financial service.</span></div></footer>
+</body>
+</html>
+'''
+
+path = Path("/mnt/data/novawallet.php")
+path.write_text(php, encoding="utf-8")
+print(f"Created: {path}")
